@@ -31,4 +31,4 @@ Basically, all your stuff is yours, I don't send it anywhere that you don't spec
 
 ## License
 
-MIT - do what you want, I'm not liable for anything. Good luck, have at it.
+[MIT License](./LICENSE) - do what you want, I'm not liable, there's no warranty. Good luck, have at it.
