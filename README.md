@@ -24,8 +24,8 @@ You can check out the `permissions` files here:
 
 You can view my `privacy_policy` here:
 
-* [Chrome](./privacy_policy_chrome.html)
-* [Firefox](./privacy_policy_firefox.html)
+* [Chrome](./docs/privacy_policy_chrome.html)
+* [Firefox](./docs/privacy_policy_firefox.html)
 
 Basically, all your stuff is yours, I don't send it anywhere that you don't specify yourself, and there's no tracking or other usage in the application.
 
