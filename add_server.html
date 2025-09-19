@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Wallabag Server</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body class="add-server-page">
+  <div style="margin-bottom:1em;">
+    <a href="wallabag_client_walkthrough.html" target="_blank">How to add a new client in Wallabag?</a>
+  </div>
+  <h2>Add Wallabag Server</h2>
+  <form id="add-server-form">
+  <label>Server Name:<br><input type="text" id="server-name" required placeholder="e.g. Personal Wallabag"></label><br><br>
+  <label>Server URL:<br><input type="url" id="server-url" required placeholder="https://your.wallabag.server"></label><br><br>
+    <label>Client ID:<br><input type="text" id="client-id" required></label><br><br>
+    <label>Client Secret:<br><input type="text" id="client-secret" required></label><br><br>
+    <label>Username:<br><input type="text" id="username" required></label><br><br>
+    <label>Password:<br>
+      <div class="password-container">
+        <input type="password" id="password" required>
+        <span id="toggle-password">
+          <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </span>
+      </div>
+    </label><br><br>
+    <button type="submit">Add Server</button>
+    <button type="button" id="cancel">Cancel</button>
+  </form>
+  <div id="message"></div>
+  <script src="add_server.js"></script>
+</body>
+</html>

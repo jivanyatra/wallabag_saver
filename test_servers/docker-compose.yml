@@ -1,0 +1,62 @@
+services:
+  wallabag_0:
+    image: wallabag/wallabag
+    container_name: wallabag_test_0
+    # restart: unless-stopped
+    environment:
+      - SYMFONY__ENV__DOMAIN_NAME=http://server0.localhost.docker
+      - SYMFONY__ENV__DATABASE_DRIVER=pdo_sqlite
+      - SYMFONY__ENV__DATABASE_TABLE_PREFIX="wallabag_"
+      - SYMFONY__ENV__SERVER_NAME="wallabag test server 0"
+    ports:
+      - 8000:80
+    volumes:
+      - ./images0:/var/www/wallabag/web/assets/images
+      - ./data0:/var/www/wallabag/data
+    healthcheck:
+      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost/api/info"]
+      interval: 1m
+      timeout: 3s
+
+  wallabag_1:
+    image: wallabag/wallabag
+    container_name: wallabag_test_1
+    # restart: unless-stopped
+    environment:
+      - SYMFONY__ENV__DOMAIN_NAME=http://server1.localhost.docker
+      - SYMFONY__ENV__DATABASE_DRIVER=pdo_sqlite
+      - SYMFONY__ENV__DATABASE_TABLE_PREFIX="wallabag_"
+      - SYMFONY__ENV__SERVER_NAME="wallabag test server 1"
+    ports:
+      - 8001:80
+    volumes:
+      - ./images1:/var/www/wallabag/web/assets/images
+      - ./data1:/var/www/wallabag/data
+    healthcheck:
+      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost/api/info"]
+      interval: 1m
+      timeout: 3s
+
+  wallabag_2:
+    image: wallabag/wallabag
+    container_name: wallabag_test_2
+    # restart: unless-stopped
+    environment:
+      - SYMFONY__ENV__DOMAIN_NAME=http://server2.localhost.docker
+      - SYMFONY__ENV__DATABASE_DRIVER=pdo_sqlite
+      - SYMFONY__ENV__DATABASE_TABLE_PREFIX="wallabag_"
+      - SYMFONY__ENV__SERVER_NAME="wallabag test server 2"
+    ports:
+      - 8002:80
+    volumes:
+      - ./images2:/var/www/wallabag/web/assets/images
+      - ./data2:/var/www/wallabag/data
+    healthcheck:
+      test: ["CMD", "wget" ,"--no-verbose", "--tries=1", "--spider", "http://localhost/api/info"]
+      interval: 1m
+      timeout: 3s
+
+
+# created host entries in /etc/hosts
+# created nginx site profiles in /etc/nginx/sites-available/testserver[0,1,2]
+#

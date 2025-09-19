@@ -1,0 +1,6 @@
+dist/
+test_servers/conf
+test_servers/data*
+test_servers/images*
+test_servers/dns*
+

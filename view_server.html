@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View/Edit Wallabag Server</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="view-server-page">
+  <h2>Wallabag Server Details</h2>
+  <form id="server-form">
+    <label>Server Name:<br><input type="text" id="server-name" required disabled></label><br>
+    <label>Server URL:<br><input type="url" id="server-url" required disabled></label><br>
+    <label>Client ID:<br><input type="text" id="client-id" required disabled></label><br>
+    <label>Client Secret:<br><input type="text" id="client-secret" required disabled></label><br>
+    <label>Username:<br><input type="text" id="username"></label><br>
+    <label>Password:<br><input type="password" id="password"></label><br>
+    <div id="form-message" style="margin-bottom:1em;"></div>
+    <button type="button" id="edit-btn">Edit</button>
+    <button type="submit" id="save-btn" style="display:none;">Save</button>
+    <button type="button" id="cancel-btn">Cancel</button>
+  </form>
+  <script src="view_server.js"></script>
+</body>
+</html>

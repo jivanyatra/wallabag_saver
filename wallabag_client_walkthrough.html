@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wallabag Client Walkthrough</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="walkthrough-page">
+  <script src="wallabag_client_walkthrough.js"></script>
+  <h2>How to Add a New Client in Wallabag</h2>
+  <ol>
+    <li>Log in to your Wallabag web interface as an administrator.</li>
+    <li>Go to <strong>Settings</strong> &rarr; <strong>API clients management</strong>.</li>
+    <li>Click <strong>Add a client</strong>.</li>
+    <li>Fill in the form:
+      <ul>
+        <li><strong>Name</strong>: Choose a name (e.g., "Wallabag Saver Extension").</li>
+        <li><strong>Redirect URI</strong>: You can use <code>urn:ietf:wg:oauth:2.0:oob</code> or leave blank for password grant.</li>
+        <li>Leave other fields as default unless you know you need to change them.</li>
+      </ul>
+    </li>
+    <li>Click <strong>Save</strong>.</li>
+    <li>Copy the <strong>Client ID</strong> and <strong>Client Secret</strong> from the list. You will need these for the extension.</li>
+  </ol>
+  <p>For more details, see the <a href="https://doc.wallabag.org/en/user/developer.html#api" target="_blank">Wallabag API documentation</a>.</p>
+</body>
+</html>
