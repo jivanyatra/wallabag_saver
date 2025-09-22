@@ -1,13 +1,12 @@
 {
   "manifest_version": 2,
   "name": "Wallabag Saver",
-  "version": "1.0",
+  "version": "1.0.2",
   "description": "Save pages to one or more Wallabag servers.",
   "permissions": [
-    "storage",
-    "tabs",
-    "activeTab",
-    "<all_urls>"
+  "storage",
+  "tabs",
+  "<all_urls>"
   ],
   "background": {
     "scripts": ["background.js"]
