@@ -2,6 +2,8 @@
 
 This is an extension that allows users to connect to multiple Wallabag servers and save items to any of them at their discretion. Users can opt to save the current active tab, or all tabs in the current window.
 
+There's also a Bulk Save feature! Add a list of URLs (one per line) and select a saved Wallabag server to send them to! You can easily import lists this way. This has been tested with <100 URLs, but it is not (yet?) optimized for longer lists.
+
 ## Build
 
 Running the build script `build.sh` should create a `dist/` folder and build Chrome and Firefox versions of this extension.
