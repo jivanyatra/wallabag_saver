@@ -9,6 +9,7 @@
   <div id="menu">
       <button id="save-tab">Save Tab</button>
       <button id="save-all-tabs">Save All Tabs in Window</button>
+      <button id="save-bulk">Save Bulk</button>
       <button id="options">Options</button>
       <div id="toggle-row" style="margin-top: 10px; display: flex; align-items: center; justify-content: flex-end; gap: 6px;">
         <span style="font-size:0.92em;">Dark</span>
@@ -20,6 +21,14 @@
   </div>
   <div id="popup-message"></div>
   <div id="server-select" style="display:none;"></div>
+  <div id="bulk-view" style="display:none; width:210px; padding:12px 6px 6px 6px; box-sizing:border-box; background:#f9fafb; border-radius:12px;">
+    <h3 style="margin-top:0;">Bulk Save URLs</h3>
+    <textarea id="bulk-urls" rows="7" style="width:100%; resize:vertical; font-size:0.98em; border-radius:6px; border:1.5px solid #8fa2b8; padding:6px;"></textarea>
+    <div style="display:flex; gap:8px; margin-top:8px;">
+      <button id="bulk-save-btn">Save</button>
+      <button id="bulk-cancel-btn">Cancel</button>
+    </div>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>

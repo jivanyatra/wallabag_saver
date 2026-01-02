@@ -210,3 +210,49 @@ document.getElementById('options').onclick = () => {
 
 document.getElementById('save-tab').onclick = handleSaveTab;
 document.getElementById('save-all-tabs').onclick = handleSaveAllTabs;
+
+// Bulk Save logic
+const bulkView = document.getElementById('bulk-view');
+const menu = document.getElementById('menu');
+const bulkUrlsTextarea = document.getElementById('bulk-urls');
+const bulkSaveBtn = document.getElementById('bulk-save-btn');
+const bulkCancelBtn = document.getElementById('bulk-cancel-btn');
+
+document.getElementById('save-bulk').onclick = () => {
+	chrome.tabs.create({ url: chrome.runtime.getURL('bulk.html') });
+};
+
+bulkCancelBtn.onclick = () => {
+	bulkView.style.display = 'none';
+	menu.style.display = 'block';
+};
+
+bulkSaveBtn.onclick = async () => {
+	const urls = bulkUrlsTextarea.value.split('\n').map(u => u.trim()).filter(Boolean);
+	if (urls.length === 0) {
+		showMessage('Enter at least one URL.', 'error');
+		return;
+	}
+	chrome.storage.local.get([SERVERS_KEY], async (result) => {
+		const servers = result[SERVERS_KEY] || [];
+		if (servers.length === 0) {
+			showMessage('No Wallabag servers configured. Please add one in Options.', 'error');
+			return;
+		}
+		if (servers.length === 1) {
+			for (const url of urls) await saveUrlToServer(servers[0], url);
+			showMessage('Saved all URLs!', 'success', true);
+			bulkView.style.display = 'none';
+			menu.style.display = 'block';
+		} else {
+			showServerSelect(servers, async (server) => {
+				if (server) {
+					for (const url of urls) await saveUrlToServer(server, url);
+					showMessage('Saved all URLs!', 'success', true);
+				}
+				bulkView.style.display = 'none';
+				menu.style.display = 'block';
+			});
+		}
+	});
+};

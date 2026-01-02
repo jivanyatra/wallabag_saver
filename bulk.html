@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wallabag Saver - Bulk Save</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { max-width: 900px; margin: 2em auto; font-family: sans-serif; font-size: 1.08em; background: #f9fafb; color: #222; padding: 2em; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); }
+    h1 { font-size: 1.6em; margin-bottom: 0.5em; }
+    a { color: #1976d2; }
+    #bulk-urls { width: 100%; min-height: 350px; font-size: 1.08em; border-radius: 8px; border: 1.5px solid #8fa2b8; padding: 10px; resize: vertical; }
+    #bulk-controls { display: flex; gap: 12px; margin-top: 18px; align-items: center; }
+    #bulk-server-select { font-size: 1em; border-radius: 6px; border: 1.5px solid #8fa2b8; padding: 4px 8px; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #181c20; color: #e6e6e6; }
+      a { color: #90caf9; }
+      #bulk-urls { background: #232a32; color: #e6e6e6; border-color: #444; }
+      #bulk-server-select { background: #232a32; color: #e6e6e6; border-color: #444; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Bulk Save URLs to Wallabag</h1>
+  <textarea id="bulk-urls" placeholder="Paste URLs here, one per line..."></textarea>
+  <div id="bulk-controls">
+    <select id="bulk-server-select"></select>
+    <button id="bulk-save-btn">Save</button>
+  </div>
+  <div id="bulk-message" style="margin-top:18px;"></div>
+  <script src="bulk.js"></script>
+</body>
+</html>
